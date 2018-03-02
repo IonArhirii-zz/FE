@@ -1,0 +1,26 @@
+.specs__inner {
+  margin-top: 1.75rem;
+  font-size: 1rem;
+
+  @include mappy-bp(small) {
+    margin-top: 3.75rem;
+  }
+}
+
+.spects__item {
+  margin-bottom: .5rem;
+
+  @include mappy-bp(small) {
+    @include flex-row;
+    margin-bottom: 1rem;
+  }
+}
+
+.specs__item-label {
+  @include base-bold;
+  color: $black;
+
+  @include mappy-bp(small) {
+    margin-right: .625rem;
+  }
+}

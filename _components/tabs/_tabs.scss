@@ -1,0 +1,50 @@
+ul {
+  &.tabs__nav {
+    @include flex-row;
+    list-style: none;
+    justify-content: flex-end;
+
+    li {
+
+     a {
+       @include base-bold;
+       color: $red;
+       padding: 0 .625rem;
+       text-transform: uppercase;
+       text-decoration: none;
+     }
+
+     &.active {
+       a {
+         color: $light-gray;
+       }
+     }
+    }
+  }
+}
+
+.tabs__pane {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+.tabs__header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.tabs__title {
+  padding-left: 1.25rem;
+  font-weight: 400;
+}
+
+.tabs__content {
+  border: .25rem solid $light-gray;
+  border-radius: .625rem;
+  padding: $padding-md;
+}

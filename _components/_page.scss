@@ -1,0 +1,38 @@
+.container {
+  box-sizing: border-box;
+  max-width: $container-width;
+  margin: auto;
+  padding: 0 .625rem;
+  width: 100%;
+
+  @include mappy-bp(small) {
+    padding: 0 1.125rem;
+  }
+}
+
+.page-title {
+  margin-top: 3rem;
+  line-height: 1.4rem;
+
+  @include mappy-bp(small) {
+    margin-top: 10rem;
+  }
+}
+
+.intro {
+  @include base-bold;
+  font-size: 1.125rem;
+  color: $black;
+
+  @include mappy-bp(small) {
+    font-size: 1.5rem;
+  }
+}
+
+.intro__inner {
+  padding: 2rem 0;
+
+  @include mappy-bp(small) {
+    padding: 3.7rem 0;
+  }
+}

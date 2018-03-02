@@ -1,0 +1,112 @@
+.card__icon {
+  display: block;
+  height: 12.5rem;
+  width: 12.5rem;
+  border-radius: 1.25rem;
+  padding: .375rem;
+  position: relative;
+  border: .125rem solid $gray;
+  margin-bottom: 3.125rem;
+}
+
+.card__icon-bg {
+  height: 100%;
+  width: 100%;
+  border-radius: .625rem;
+  background-color: green;
+
+  &--pink {
+    background: $hotpink;
+  }
+
+  &--blue {
+    background: $blue;
+  }
+}
+
+.card__icon-letter {
+  @include base-bold;
+  font-size: 3.125rem;
+  color: white;
+  opacity: .5;
+  position: absolute;
+  line-height: 1;
+  bottom: 1.875rem;
+  left: 1.875rem;
+}
+
+.card__radio {
+  input[type="radio"] {
+    display: none;
+  }
+
+  label {
+    cursor: pointer;
+    display: block;
+  }
+
+  input[type="radio"]:checked+label {
+    opacity: .5;
+
+    .card__icon {
+      opacity: .5;
+    }
+  }
+
+  .card__label {
+    font-size: 1.5rem;
+    position: relative;
+    padding-left: 2rem;
+    letter-spacing: 0.0625rem;
+    display: block;
+
+    @include mappy-bp(small) {
+      width: 60%;
+    }
+
+    &:before {
+      content: '\2022';
+      font-size: 3rem;
+      color: $light-gray;
+      position: absolute;
+      left: 0;
+      top: 0.3125rem;
+      line-height: .8;
+    }
+  }
+}
+
+.card--horizontal {
+  &:not(:last-child) {
+    margin-bottom: 4.375rem;
+  }
+
+  .card__icon {
+    height: 8.75rem;
+    width: 8.75rem;
+    margin-bottom: 0;
+  }
+
+  .card__icon-letter {
+    font-size: 2rem;
+    bottom: 1.125rem;
+    left: 1.125rem;
+  }
+
+
+  .card__label {
+    padding-left: 1.5rem;
+
+    @include mappy-bp(small) {
+      margin-left: .5rem;
+    }
+  }
+
+  label {
+    @include mappy-bp(small) {
+      @include flex-row;
+      align-items: center;
+    }
+  }
+}
+

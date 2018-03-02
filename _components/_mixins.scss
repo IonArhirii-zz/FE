@@ -1,0 +1,51 @@
+// Set flex item width.
+@mixin flex-width($width: 100%) {
+  flex-basis: $width;
+  max-width: $width;
+}
+
+@mixin flex-row {
+  display: flex;
+  flex: 1 0 auto;
+  flex-flow: row nowrap;
+  align-items: stretch;
+}
+
+@mixin flex-column {
+  @include flex-width();
+  display: flex;
+  flex: 1 0 auto;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+}
+
+// Griddle functions.
+@mixin griddle($cols: $grid-columns, $suffix: false) {
+  @for $i from 1 through $cols {
+    .grid--col-#{$i}#{\@+$suffix} {
+      > .grid__col {
+        @include flex-width(percentage(1 / $i));
+      }
+    }
+
+    .grid > .grid__col-#{$i}#{\@+$suffix} {
+      @include flex-width(percentage($i / $cols));
+    }
+  }
+}
+
+@mixin griddle-gutter($size: $grid-gutter) {
+  margin-left: -#{$size};
+
+  > [class^="grid__col"] {
+    padding-left: $size;
+  }
+
+  @include mappy-bp(small) {
+    margin-left: -#{$size*2};
+
+    > [class^="grid__col"] {
+      padding-left: $size*2;
+    }
+  }
+}

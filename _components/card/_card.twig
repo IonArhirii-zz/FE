@@ -1,0 +1,15 @@
+<div class="card {{ modifier_class }}">
+  <div class="card__inner">
+    <div class="card__radio">
+      <input type="radio" name="font" id="{{ card__id }}" value="{{ card__value }}"/>
+      <label for="{{ card__id }}">
+        <div class="card__icon">
+          <div class="card__icon-bg {{ card__color ? 'card__icon-bg--' ~ card__color}}">
+            <span class="card__icon-letter">{{ card_letter }}</span>
+          </div>
+        </div>
+        <span class="card__label">{{ card__label }}</span>
+      </label>
+    </div>
+  </div>
+</div>
